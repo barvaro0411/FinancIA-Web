@@ -68,7 +68,6 @@ FinancIA-Web/
 │   │   └── aiRoutes.js        # Asistente IA
 │   ├── middleware/        # Autenticación y validación
 │   ├── db/               # Configuración de base de datos
-│   ├── .env              # Variables de entorno
 │   ├── server.js         # Punto de entrada del servidor
 │   └── package.json
 │
@@ -134,6 +133,27 @@ npm run dev
 ```
 
 El backend estará corriendo en `http://localhost:3000`
+
+## 🔐 Configuración de variables de entorno
+
+Para ejecutar el backend, copia el archivo `backend/.env.example` y renómbralo a `backend/.env`.
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+Luego reemplaza los valores por los reales:
+
+```env
+PORT=3000
+JWT_SECRET=tu_clave_secreta_super_segura
+DATABASE_URL=./database.sqlite
+CORS_ORIGINS=http://localhost:5173,http://192.168.100.25:5173
+```
+
+Asegúrate de que `backend/.env` esté ignorado por Git (incluido en `.gitignore`).
+
+---
 
 ### Configurar Frontend
 
@@ -261,24 +281,3 @@ Las contribuciones son bienvenidas. Para cambios importantes:
 Si tienes preguntas o problemas:
 - Abre un issue
 - Contacta al autor
-
----
-
-## 🔐 Configuración de variables de entorno
-
-Para ejecutar el backend, copia el archivo `backend/.env.example` y renómbralo a `backend/.env`.
-
-```bash
-cp backend/.env.example backend/.env
-```
-
-Luego reemplaza los valores por los reales:
-
-```env
-PORT=3000
-JWT_SECRET=tu_clave_secreta_super_segura
-DATABASE_URL=./database.sqlite
-CORS_ORIGINS=http://localhost:5173,http://192.168.100.25:5173
-```
-
-Asegúrate de que `backend/.env` esté ignorado por Git (incluido en `.gitignore`).
